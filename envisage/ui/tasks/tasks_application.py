@@ -302,7 +302,7 @@ class TasksApplication(Application):
         # Create a TaskWindow for each TaskWindowLayout.
         for window_layout in window_layouts:
             window = self.create_window(window_layout,
-                                        restore=self.always_use_default_layout)
+                                        restore=(not self.always_use_default_layout))
             window.open()
 
     def _get_task_factory(self, id):
